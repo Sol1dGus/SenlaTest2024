@@ -81,6 +81,13 @@ class Visual{
                 System.out.println("      [----------------]");
                 break;
             default:
+                System.out.println();
+                System.out.println("  ☆  ☆    ☆   ☆  ☆ ☆    ☆   ☆  ☆   ");
+                System.out.println("     ☆  ☆    ☆   ☆  ☆ ☆    ☆   ☆  ☆   ");
+                System.out.println("  ☆    ☆   ☆ \\ 0 /  ☆    ☆   ☆  ");
+                System.out.println("   ☆  ☆  ☆    []   ☆  ☆  ☆");
+                System.out.println("               /\\   ");
+                System.out.println("      [----------------]");
                 break;
         }
     }
@@ -117,8 +124,9 @@ public class Task1 {
         Visual.PrintGallows(mistakes);
         while (mistakes != 6 && playerword.indexOf("*") != -1)
         {
-            System.out.println(playerword);
-            System.out.println("Введите букву:");
+            System.out.println("Слово: " + playerword);
+            System.out.println("Количество допустимых ошибок: " + (6 - mistakes));
+            System.out.println("Введите букву: ");
             c = in.next().charAt(0);
             if (inputedchars.indexOf("" + c) != -1)
             {
@@ -143,9 +151,10 @@ public class Task1 {
                     System.out.println("Буква " + c + " в слове есть!");
                 }
             }
-            Visual.PrintGallows(mistakes);
+            if (playerword.indexOf("*") != -1) Visual.PrintGallows(mistakes);
+            else Visual.PrintGallows(7);
         }
-        System.out.println(playerword);
+        System.out.println(word);
         if (mistakes == 6)
         {
             System.out.println("К СОЖАЛЕНИЮ, ВЫ ПРОИГРАЛИ!");
