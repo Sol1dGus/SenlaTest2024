@@ -81,6 +81,7 @@ public class Task2 {
                 System.out.println("Сумма должна быть неотрицательна");
                 valuein = in.nextDouble();
             }
+            System.out.println("Результат:");
             ConverterUtilities.ConvertTab(x, valuein);
         }
     }
